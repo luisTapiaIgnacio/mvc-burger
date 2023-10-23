@@ -15,11 +15,9 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     
     <link rel="stylesheet" href="fontawesome-free6/css/all.css">
-    <link rel="stylesheet" href="../assets/stylos.css">
-    <link rel="stylesheet" href="estilo.css">
-<style>
-  body{background-color: red;}
-</style>
+   
+    <link rel="stylesheet" href="./vista/estilo.css">
+
 </head>
 <body>
     
@@ -33,7 +31,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         
         <li class="nav-item">
-         
+        
           <a class="nav-link" href="#">Inicio</a>
         </li>
         
@@ -157,9 +155,11 @@
 <?php
      //ISSET: isset() determina si una variable esta definida y no es NULL
      if(isset($_GET['pagina'])){
-      if($_GET['pagina']=='registro' || $_GET['pagina']=='ingreso' || $_GET['pagina']=='inicio')
+      if($_GET['pagina']=='registro' || $_GET['pagina']=='ingreso' || $_GET['pagina']=='inicio' ||$_GET['pagina']=='salir')
       {
         include"paginas/".$_GET['pagina'].'.php';
+      }else{
+        include"paginas/error404.php";
       }
    }else{
     include "paginas/registro.php";
